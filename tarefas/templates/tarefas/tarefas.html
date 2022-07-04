@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %} Lista de Tarefas {% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+	<h1>Lista de Tarefas</h1>
+	<a  id="add-link" href="novatarefa/">
+		<div class="col-2 add-div">
+			<i class="fas fa-plus"></i>Adicionar tarefa
+		</div>
+	</a>
+
+	<div class="col-9 search-div">
+		<form method="GET" id="search-form">
+			<input class="form" type="text" id="search" name="search" placeholder="Digite o nome da tarefa">
+			<i class="fas fa-search" id="search-btn"></i>
+		</form>
+	</div>
+	<div class="col-md-12">
+		<span>Filtar por:</span>
+		<select  name="filter" id="filter">
+			<option value="">Escolha a opcao</option>
+			<option value="feito">Tarefas feitas</option>
+			<option value="fazendo">Tarefas a fazer</option>
+		</select>
+	</div>
+	{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{ message }} </li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<ul class="task-list">
+		{% for tarefa in tarefas %}
+		{% if tarefa.feito == 'fazendo' %}
+			<li class="task-item">
+		{% else %}
+			<li class="task-item feito">
+		{% endif %}
+				<span><a href="/tarefa/{{tarefa.id}}">{{tarefa.titulo}}</a></span>
+				<a href="deletar/{{tarefa.id}}"><span><i class="fas fa-trash"></i></span></a>
+				<a href="editar/{{tarefa.id}}"><span><i class="fas fa-edit"></i></span></a>
+				<a href="changestatus/{{tarefa.id}}"><span><i class="fas fa-check"></i></span></a>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="pagination">
+		<span class="step-links">
+			{% if tarefas.has_previous %}
+				<a href="?pagina={{ tarefas.previous_page_number }}"><i class="fa-solid fa-arrow-left"></i></a>
+			{% endif %}
+
+			{% if tarefas.paginator.num_pages %}
+			<span class="current">
+				{{ tarefas.number }} de {{ tarefas.paginator.num_pages }}
+			</span>
+			{% endif %}
+
+			{% if tarefas.has_next %}
+				<a href="?pagina={{ tarefas.next_page_number }}"><i class="fa-solid fa-arrow-right"></i></a>
+			{% endif %}
+		</span>
+	</div>
+
+</div>
+{% endblock %}

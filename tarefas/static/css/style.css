@@ -1,0 +1,173 @@
+.container-fluid{
+	padding: 0;
+}
+
+.container-fluid .row{
+	margin: 0;
+}
+
+/*Navbar*/
+.navbar{
+	border-bottom: 1px solid #333;
+	margin-bottom: 20px;
+}
+
+.navbar-nav{
+	margin: auto;
+}
+
+.navbar-brand{
+	font-weight: 1px;
+}
+
+.navbar-light .navbar-nav a.navbar-link{
+	color: #333;
+	letter-spacing: 1px;
+}
+
+/*Botao de adicionar*/
+
+.add-div{
+	background: #3476e2;
+	cursor: pointer;	
+	display: inline-block;
+	color: #FFF;
+	padding: 8px;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.fas.fa-plus{
+	color: #FFF;
+	margin-right: 10px;
+	margin-left: 5px;
+}
+
+.search-div{
+	padding: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+.fa-search{
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.form{
+	width: 500px;
+}
+
+/*filtro*/
+.filter-div{
+	margin-bottom: 15px;
+	padding: 0;
+}
+
+#filter{
+	display: inline-block;
+	width: 200px;	
+	margin-left: 10px;
+}
+
+/*Lista de tarefas*/
+.list-div{
+	padding: 0;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.task-item{
+	list-style: none;
+	font-size: 20px;
+	height: 50px;
+	padding: 0 15px;
+	padding-top: 10px;
+	border-bottom: 1px dashed #ccc;
+}
+
+.task-item.feito{
+	background-color: #ccc;
+}
+
+.fas.fa-trash, .fas.fa-edit, .fas.fa-check{
+	cursor: pointer;
+	margin: 5px;
+	font-size: 20px;
+	float: right;
+}
+
+.fas.fa-trash{
+	color: red;
+}
+
+.fas.fa-edit{
+	color: #1e4;
+}
+
+.fas.fa-check{
+	color: #ccc;
+}
+
+.feito .fas.fa-check{
+	color: #3476e2;
+}
+
+#add-link{
+	text-decoration: none;
+}
+
+/*Rodapé*/
+footer{
+	background-color: #333;
+	height: 300px;
+	border-top: 2px solid #202020;
+}
+
+footer p{
+	color: #FFF;
+	text-align: center;
+	top: 50%;
+	position: relative;
+}
+
+/*Mensagens*/
+
+ul .messages{
+	padding: 0;
+}
+
+ul li .messages{
+	list-style: none;
+}
+
+/*Paginacao*/
+
+.pagination{
+	margin-bottom: 20px;
+}
+
+
+.step-links{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.step-links .current{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*Login*/
+.auth-card{
+	margin-bottom: 30px;
+}
+
+.change-form-p{
+	margin-top: 30px;
+	text-align: center;
+}
